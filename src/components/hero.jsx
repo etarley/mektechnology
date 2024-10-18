@@ -20,7 +20,10 @@ const Hero = () => {
   }, [mousePosition, backgroundAnimation]);
 
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
+    <senction
+      id="inicio"
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Fondo animado */}
       <motion.div
         className="absolute inset-0 z-0"
@@ -31,6 +34,7 @@ const Hero = () => {
                        linear-gradient(45deg, #1a1a1a, #2a2a2a)`,
           backgroundSize: "200% 200%",
         }}
+        o
       />
 
       {/* Partículas flotantes */}
@@ -105,7 +109,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.9 }}
           >
             <motion.button
-              className="px-8 py-4 bg-[#c13236] text-white rounded-full text-xl font-semibold hover:bg-red-700 transition duration-300 mr-4"
+              className="px-8 py-4 mb-4 sm:mb-0 bg-[#c13236] text-white rounded-full text-xl font-semibold hover:bg-red-700 transition duration-300 mr-4"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0px 0px 8px rgb(193, 50, 54)",
@@ -143,7 +147,7 @@ const Hero = () => {
           <div className="w-1 h-4 bg-white rounded-full mx-auto" />
         </motion.div>
       </motion.div>
-    </div>
+    </senction>
   );
 };
 

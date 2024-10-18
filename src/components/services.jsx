@@ -102,6 +102,7 @@ const AplicacionesMek = () => {
     <section
       ref={scrollRef}
       className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-hidden relative"
+      id="aplicaciones"
     >
       <motion.div
         style={{ opacity, scale, y: smoothY }}

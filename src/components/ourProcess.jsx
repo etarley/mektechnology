@@ -92,6 +92,7 @@ const NuestroProceso = () => {
 
   return (
     <section
+      id="proceso"
       ref={ref}
       className="py-24 bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden relative"
     >

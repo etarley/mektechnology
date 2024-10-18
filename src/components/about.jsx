@@ -72,7 +72,10 @@ const SobreNosotros = () => {
   };
 
   return (
-    <section className="relative py-24 md:py-32 bg-gray-100 overflow-hidden">
+    <section
+      id="nosotros"
+      className="relative py-24 md:py-32 bg-gray-100 overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-gray-200 to-gray-100 opacity-50">
       </div>
 

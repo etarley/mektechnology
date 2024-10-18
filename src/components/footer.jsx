@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
   motion,
   useAnimation,
   useMotionValue,
-  useTransform,
 } from "framer-motion";
 import {
   FaChevronUp,
@@ -286,7 +285,9 @@ const Footer = () => {
                 transition={{ type: "spring", ...springConfig }}
               >
                 <FaPhoneAlt className="text-[#c13236]" />
-                <span className="text-gray-400">+34 123 456 789</span>
+                <span className="text-gray-400">
+                  +1 (829) 770-1598 (Lunes a Viernes)
+                </span>
               </motion.li>
               <motion.li
                 whileHover={{ x: 5 }}
@@ -294,7 +295,9 @@ const Footer = () => {
                 transition={{ type: "spring", ...springConfig }}
               >
                 <FaMapMarkerAlt className="text-[#c13236]" />
-                <span className="text-gray-400">Madrid, España</span>
+                <span className="text-gray-400">
+                  Santiago de los Caballeros, República Dominicana
+                </span>
               </motion.li>
             </ul>
           </motion.div>
@@ -309,30 +312,12 @@ const Footer = () => {
 
         <motion.div
           variants={childVariants}
-          className="flex flex-col md:flex-row justify-between items-center"
+          className="flex flex-col md:flex-row justify-center items-center"
         >
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()}{" "}
             Mek Technologies. Todos los derechos reservados.
           </p>
-          <div className="mt-4 md:mt-0 space-x-6">
-            <motion.a
-              href="#"
-              className="text-gray-400 hover:text-white text-sm transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Política de Privacidad
-            </motion.a>
-            <motion.a
-              href="#"
-              className="text-gray-400 hover:text-white text-sm transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Términos de Servicio
-            </motion.a>
-          </div>
         </motion.div>
       </div>
 

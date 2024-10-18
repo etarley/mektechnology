@@ -82,6 +82,7 @@ const Contacto = () => {
 
   return (
     <section
+      id="contacto"
       ref={ref}
       className={`py-20 relative overflow-hidden transition-colors duration-300 ${isDarkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-800"
         }`}
@@ -286,9 +287,11 @@ const Contacto = () => {
                   className={`mr-4 text-2xl ${isDarkMode ? "text-[#ff4d4d]" : "text-[#c13236]"
                     }`}
                 />
-                <span>+34 123 456 789</span>
+                <span>
+                  +1 (829) 770-1598
+                </span>
                 <motion.button
-                  onClick={() => copyToClipboard("+34 123 456 789")}
+                  onClick={() => copyToClipboard("+1 (829) 770-1598")}
                   className="ml-2 text-gray-500 hover:text-gray-700"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
