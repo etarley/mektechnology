@@ -20,7 +20,7 @@ const Hero = () => {
   }, [mousePosition, backgroundAnimation]);
 
   return (
-    <senction
+    <section
       id="inicio"
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
@@ -147,7 +147,7 @@ const Hero = () => {
           <div className="w-1 h-4 bg-white rounded-full mx-auto" />
         </motion.div>
       </motion.div>
-    </senction>
+    </section>
   );
 };
 

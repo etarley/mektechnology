@@ -6,6 +6,7 @@ import Contacto from "./components/contacto";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
