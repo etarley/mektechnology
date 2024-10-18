@@ -65,10 +65,10 @@ const Navbar = () => {
       style={{ backgroundColor }}
       className="fixed w-full z-50 transition-all duration-300 backdrop-blur-sm"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto  px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center  justify-between h-20">
           <motion.div
-            className="flex items-center "
+            className="flex items-end space-x-1"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", ...springConfig }}
           >
@@ -76,7 +76,7 @@ const Navbar = () => {
               whileHover={{ rotate: 360, scale: 1.2 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
             >
-              <AnimatedLogo className="w-12 h-12" />
+              <AnimatedLogo className="size-10" />
             </motion.div>
             <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#c13236] to-[#ff6b6b] ml-0">
               Mek Technologies

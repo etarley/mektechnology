@@ -1,13 +1,10 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
-
 const AnimatedLogo = ({ className = "" }) => {
   const controls = useAnimation();
-
   React.useEffect(() => {
     controls.start("visible");
   }, [controls]);
-
   const pathVariants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: (i) => ({
@@ -24,7 +21,6 @@ const AnimatedLogo = ({ className = "" }) => {
       },
     }),
   };
-
   const fillVariants = {
     hidden: { fillOpacity: 0 },
     visible: (i) => ({
@@ -32,7 +28,6 @@ const AnimatedLogo = ({ className = "" }) => {
       transition: { delay: i * 0.2 + 1.3, duration: 0.8, ease: "easeInOut" },
     }),
   };
-
   const svgVariants = {
     hidden: { scale: 0.8, opacity: 0, rotate: -10 },
     visible: {
@@ -42,7 +37,6 @@ const AnimatedLogo = ({ className = "" }) => {
       transition: { duration: 1, ease: "easeOut" },
     },
   };
-
   const pulseVariants = {
     pulse: {
       scale: [1, 1.05, 1],
@@ -54,7 +48,6 @@ const AnimatedLogo = ({ className = "" }) => {
       },
     },
   };
-
   const pathProps = (i) => ({
     variants: pathVariants,
     initial: "hidden",
@@ -66,7 +59,6 @@ const AnimatedLogo = ({ className = "" }) => {
     strokeLinejoin: "round",
     fill: "none",
   });
-
   const fillProps = (i) => ({
     variants: fillVariants,
     initial: "hidden",
@@ -74,14 +66,13 @@ const AnimatedLogo = ({ className = "" }) => {
     custom: i,
     fill: "#c13236",
   });
-
   return (
     <motion.svg
       className={className}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1000 1000"
-      width="300"
-      height="300"
+      viewBox="200 200 600 600"
+      width="400"
+      height="400"
       variants={svgVariants}
       initial="hidden"
       animate={controls}
@@ -96,7 +87,6 @@ const AnimatedLogo = ({ className = "" }) => {
           d="M289.06 290.62H393.32V725.05H289.06Z"
           {...fillProps(0)}
         />
-
         <motion.path
           d="M455.89 125.54H560.15V559.97H455.89Z"
           transform="translate(165.26 850.78) rotate(-90)"
@@ -107,7 +97,6 @@ const AnimatedLogo = ({ className = "" }) => {
           transform="translate(165.26 850.78) rotate(-90)"
           {...fillProps(1)}
         />
-
         <motion.path
           d="M547.11 549.89H651.37V812.25H547.11Z"
           transform="translate(-81.82 1280.32) rotate(-90)"
@@ -118,7 +107,6 @@ const AnimatedLogo = ({ className = "" }) => {
           transform="translate(-81.82 1280.32) rotate(-90)"
           {...fillProps(2)}
         />
-
         <motion.path
           d="M633.15 480.09H730.42V732.35H633.15Z"
           {...pathProps(3)}
@@ -131,5 +119,4 @@ const AnimatedLogo = ({ className = "" }) => {
     </motion.svg>
   );
 };
-
 export default AnimatedLogo;

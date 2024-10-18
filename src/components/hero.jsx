@@ -68,7 +68,7 @@ const Hero = () => {
           className="flex flex-col items-center justify-center"
         >
           {/* Logo animado */}
-          <AnimatedLogo />
+          <AnimatedLogo className="size-96" />
 
           <motion.h1
             className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
