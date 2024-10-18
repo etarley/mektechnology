@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Meteors } from "./ui/meteors";
 import { motion, useAnimation, useViewportScroll } from "framer-motion";
 
 const SobreNosotros = () => {
@@ -74,7 +75,7 @@ const SobreNosotros = () => {
   return (
     <section
       id="nosotros"
-      className="relative py-24 md:py-32 bg-gray-100 overflow-hidden"
+      className=" relative py-24 md:py-32 bg-gray-100 overflow-hidden "
     >
       <div className="absolute inset-0 bg-gradient-to-b from-gray-200 to-gray-100 opacity-50">
       </div>
@@ -83,7 +84,7 @@ const SobreNosotros = () => {
         variants={containerVariants}
         initial="hidden"
         animate={controls}
-        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 bg-dot-black"
       >
         <motion.h2
           variants={itemVariants}

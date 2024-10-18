@@ -48,6 +48,7 @@ const Hero = () => {
         >
           <Vortex
             baseHue={358}
+            rangeHue={0}
             rangeY={850}
             rangeSpeed={0.5}
             particleCount={100}
@@ -58,7 +59,7 @@ const Hero = () => {
             <AnimatedLogo className="size-48 sm:size-52 md:size-56 lg:size-60 xl:size-64" />
 
             <motion.h1
-              className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
+              className="text-6xl font-bold mb-2 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -78,26 +79,30 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
             >
-              <motion.button
-                className="px-8 py-4 mb-4 sm:mb-0 bg-[#c13236] text-white rounded-full text-xl font-semibold hover:bg-red-700 transition duration-300 mr-4"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0px 0px 8px rgb(193, 50, 54)",
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Descubre Nuestro Trabajo
-              </motion.button>
-              <motion.button
-                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-xl font-semibold hover:bg-white hover:text-[#c13236] transition duration-300"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0px 0px 8px rgba(255, 255, 255, 0.5)",
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Contáctanos
-              </motion.button>
+              <a href="#aplicaciones">
+                <motion.button
+                  className="px-8 py-4 mb-4 sm:mb-0 bg-[#c13236] text-white rounded-full text-xl font-semibold hover:bg-red-700 transition duration-300 mr-4"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0px 0px 8px rgb(193, 50, 54)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Descubre Nuestro Trabajo
+                </motion.button>
+              </a>
+              <a href="#contacto">
+                <motion.button
+                  className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-xl font-semibold hover:bg-white hover:text-[#c13236] transition duration-300"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0px 0px 8px rgba(255, 255, 255, 0.5)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Contáctanos
+                </motion.button>
+              </a>
             </motion.div>
           </Vortex>
         </motion.div>

@@ -46,7 +46,9 @@ const AplicacionesMek = () => {
         "Sin costos iniciales para proveedores",
         "Flexibilidad de horarios para proveedores",
       ],
+      downloadUrl: "https://linktr.ee/ineedemrd",
     },
+
     {
       nombre: "Telocargamos",
       estado: "En desarrollo",
@@ -59,6 +61,7 @@ const AplicacionesMek = () => {
         "Sistema de seguimiento en tiempo real",
         "Calificaciones y reseñas de usuarios",
       ],
+      downloadUrl: "https://linktr.ee/telocargamos",
     },
     {
       nombre: "Dr. Fácil",
@@ -72,6 +75,7 @@ const AplicacionesMek = () => {
         "Acceso a diversos especialistas",
         "Historial médico digital",
       ],
+      downloadUrl: "https://linktr.ee/drfacil",
     },
   ];
 
@@ -177,13 +181,15 @@ const AplicacionesMek = () => {
                 >
                   {app.estado}
                 </span>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-4 py-2 bg-white text-[#c13236] rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors duration-300"
-                >
-                  {app.estado === "Disponible" ? "Descargar" : "Más Info"}
-                </motion.button>
+                <a href={app.estado === "Disponible" ? app.downloadUrl : ""}>
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-4 py-2 bg-white text-[#c13236] rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors duration-300"
+                  >
+                    {app.estado === "Disponible" ? "Descargar" : "Más Info"}
+                  </motion.button>
+                </a>
               </motion.div>
             </motion.div>
           ))}
@@ -196,7 +202,7 @@ const AplicacionesMek = () => {
           className="mt-16 sm:mt-20 text-center"
         >
           <motion.a
-            href="#descargar-ineedem"
+            href="https://linktr.ee/ineedemrd"
             className="inline-block bg-gradient-to-r from-[#c13236] to-red-500 text-white py-4 px-10 sm:px-12 rounded-full text-lg sm:text-xl font-bold hover:from-red-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#c13236]"
             whileHover={{
               scale: 1.05,
@@ -264,7 +270,7 @@ const AplicacionesMek = () => {
                 </motion.button>
                 {aplicaciones[appActiva].estado === "Disponible" && (
                   <motion.a
-                    href="#descargar-ineedem"
+                    href="https://linktr.ee/ineedemrd"
                     className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors"
                     onClick={(e) => {
                       e.stopPropagation();
