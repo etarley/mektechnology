@@ -16,6 +16,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
+import AnimatedLogo from "./animatedLogo";
 
 const Footer = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
@@ -141,7 +142,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <motion.div variants={childVariants} className="space-y-6">
             <motion.div
-              className="flex items-center space-x-4"
+              className="flex items-center"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", ...springConfig }}
             >
@@ -149,17 +150,7 @@ const Footer = () => {
                 whileHover={{ rotate: 360, scale: 1.2 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
               >
-                <svg className="w-12 h-12" viewBox="0 0 100 100">
-                  <motion.path
-                    d="M10 10 L90 10 L90 90 L10 90 L10 10"
-                    stroke="#c13236"
-                    strokeWidth="4"
-                    fill="none"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, ease: "easeInOut" }}
-                  />
-                </svg>
+                <AnimatedLogo className="w-12 h-12" />
               </motion.div>
               <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#c13236] to-[#ff6b6b]">
                 Mek Technologies

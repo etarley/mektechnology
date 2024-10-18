@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import AnimatedLogo from "./animatedLogo";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -64,28 +65,10 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
+          className="flex flex-col items-center justify-center"
         >
           {/* Logo animado */}
-          <svg className="w-32 h-32 mx-auto mb-8" viewBox="0 0 100 100">
-            <motion.path
-              d="M10 10 L90 10 L90 90 L10 90 L10 10"
-              stroke="#c13236"
-              strokeWidth="4"
-              fill="none"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 2, ease: "easeInOut" }}
-            />
-            <motion.path
-              d="M30 30 L70 30 L70 70"
-              stroke="#ffffff"
-              strokeWidth="2"
-              fill="none"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 1.5, delay: 1, ease: "easeInOut" }}
-            />
-          </svg>
+          <AnimatedLogo />
 
           <motion.h1
             className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
