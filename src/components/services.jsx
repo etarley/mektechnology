@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { NeonGradientCard } from "./ui/neon-gradient-card";
 import {
   AnimatePresence,
   motion,
@@ -38,7 +39,7 @@ const AplicacionesMek = () => {
       estado: "Disponible",
       descripcion:
         "La plataforma que te conecta con proveedores de servicios capaces de ayudarte con tus necesidades.",
-      icono: "🤝",
+      icono: <img src="/ineedem.png" className="h-8" />,
       caracteristicas: [
         "Conexión rápida entre clientes y proveedores",
         "Plataforma colaborativa y segura",
@@ -54,7 +55,7 @@ const AplicacionesMek = () => {
       estado: "En desarrollo",
       descripcion:
         "Conecta camioneros con personas interesadas en trasladar distintos tipos de cargas.",
-      icono: "🚚",
+      icono: <img src="/telocargamos.png" className="h-8" />,
       caracteristicas: [
         "Conexión eficiente entre transportistas y clientes",
         "Gestión de diversos tipos de carga",
@@ -127,8 +128,8 @@ const AplicacionesMek = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-lg sm:text-xl lg:text-2xl mb-12 sm:mb-16 text-center max-w-4xl mx-auto leading-relaxed text-gray-300"
         >
-          En Mek Technologies, desarrollamos soluciones móviles que transforman
-          la forma en que las personas acceden a servicios y se conectan con
+          En Mek Technology, desarrollamos soluciones móviles que transforman la
+          forma en que las personas acceden a servicios y se conectan con
           profesionales.
         </motion.p>
 
@@ -140,57 +141,84 @@ const AplicacionesMek = () => {
         >
           {aplicaciones.map((app, index) => (
             <motion.div
-              key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
               whileTap={{ scale: 0.95 }}
-              className={`bg-gradient-to-br ${app.estado === "Disponible"
-                  ? "from-[#c13236] to-red-700"
-                  : "from-gray-800 to-gray-700"
-                } rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer`}
               onClick={() => setAppActiva(index)}
+              className="cursor-pointer"
+              key={index}
             >
-              <motion.div
-                className="flex items-center mb-6"
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+              <NeonGradientCard
+                key={index}
+                neonColors={app.estado === "Disponible"
+                  ? { firstColor: "#dc2626", secondColor: "#c13236" }
+                  : { firstColor: "#1f2937", secondColor: "#1f2937" }}
               >
-                <span className="text-5xl mr-4">{app.icono}</span>
-                <h3 className="text-2xl font-bold text-white">{app.nombre}</h3>
-              </motion.div>
-              <motion.p
-                className="text-gray-200 mb-4"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-              >
-                {app.descripcion}
-              </motion.p>
-              <motion.div
-                className="mt-6 flex justify-between items-center"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
-              >
-                <span
-                  className={`px-3 py-1 rounded-full text-sm font-semibold ${app.estado === "Disponible"
-                      ? "bg-green-500 text-white"
-                      : "bg-yellow-500 text-gray-800"
-                    }`}
+                <motion.div
+                  className="flex items-center mb-6"
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  {app.estado}
-                </span>
-                <a href={app.estado === "Disponible" ? app.downloadUrl : ""}>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-4 py-2 bg-white text-[#c13236] rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors duration-300"
+                  <span className="text-5xl mr-4">{app.icono}</span>
+                  {app.nombre === "Dr. Fácil" &&
+                    (
+                      <h3 className="text-2xl font-bold text-white">
+                        {app.nombre}
+                      </h3>
+                    )}
+                </motion.div>
+                <motion.p
+                  className="text-gray-200 mb-4"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                >
+                  {app.descripcion}
+                </motion.p>
+                <motion.div
+                  className="mt-6 flex justify-between items-center"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                >
+                  <span
+                    className={`px-3 py-1 rounded-full text-sm font-semibold ${app.estado === "Disponible"
+                        ? "bg-green-500 text-white"
+                        : "bg-yellow-500 text-gray-800"
+                      }`}
                   >
-                    {app.estado === "Disponible" ? "Descargar" : "Más Info"}
-                  </motion.button>
-                </a>
-              </motion.div>
+                    {app.estado}
+                  </span>
+                  {app.estado === "Disponible"
+                    ? (
+                      <a
+                        href={app.estado === "Disponible"
+                          ? app.downloadUrl
+                          : ""}
+                      >
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="px-4 py-2 bg-white text-[#c13236] rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors duration-300"
+                        >
+                          {app.estado === "Disponible"
+                            ? "Descargar"
+                            : "Más Info"}
+                        </motion.button>
+                      </a>
+                    )
+                    : (
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-4 py-2 bg-white text-[#c13236] rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors duration-300"
+                      >
+                        {app.estado === "Disponible" ? "Descargar" : "Más Info"}
+                      </motion.button>
+                    )}
+                </motion.div>
+              </NeonGradientCard>
             </motion.div>
           ))}
         </motion.div>

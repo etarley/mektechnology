@@ -97,7 +97,7 @@ const SobreNosotros = () => {
           variants={itemVariants}
           className="text-lg sm:text-xl lg:text-2xl text-gray-700 mb-12 sm:mb-16 text-center max-w-4xl mx-auto leading-relaxed"
         >
-          En Mek Technologies, no solo seguimos tendencias, las creamos.
+          En Mek Technology, no solo seguimos tendencias, las creamos.
           Fusionamos creatividad visionaria con tecnología de punta para forjar
           experiencias digitales que trascienden lo ordinario y definen el
           futuro.

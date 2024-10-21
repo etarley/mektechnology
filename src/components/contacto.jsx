@@ -268,10 +268,9 @@ const Contacto = () => {
                   className={`mr-4 text-2xl ${isDarkMode ? "text-[#ff4d4d]" : "text-[#c13236]"
                     }`}
                 />
-                <span>contacto@mektechnologies.com</span>
+                <span>contact@mektechnology.com</span>
                 <motion.button
-                  onClick={() =>
-                    copyToClipboard("contacto@mektechnologies.com")}
+                  onClick={() => copyToClipboard("contact@mektechnology.com")}
                   className="ml-2 text-gray-500 hover:text-gray-700"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -308,13 +307,13 @@ const Contacto = () => {
                     }`}
                 />
                 <a
-                  href="https://github.com/MekTechnologies"
+                  href="https://github.com/MekTechnology"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`hover:${isDarkMode ? "text-[#ff4d4d]" : "text-[#c13236]"
                     } transition-colors`}
                 >
-                  github.com/MekTechnologies
+                  github.com/MekTechnology
                 </a>
               </motion.div>
               <motion.div
@@ -326,13 +325,13 @@ const Contacto = () => {
                     }`}
                 />
                 <a
-                  href="https://www.linkedin.com/company/mektechnologies"
+                  href="https://www.linkedin.com/company/mektechnology"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`hover:${isDarkMode ? "text-[#ff4d4d]" : "text-[#c13236]"
                     } transition-colors`}
                 >
-                  linkedin.com/company/mektechnologies
+                  linkedin.com/company/mektechnology
                 </a>
               </motion.div>
               <motion.p
@@ -342,9 +341,9 @@ const Contacto = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                En Mek Technologies, estamos comprometidos con la innovación y
-                la excelencia en el desarrollo de aplicaciones móviles. No dudes
-                en contactarnos para cualquier consulta o colaboración.
+                En Mek Technology, estamos comprometidos con la innovación y la
+                excelencia en el desarrollo de aplicaciones móviles. No dudes en
+                contactarnos para cualquier consulta o colaboración.
               </motion.p>
             </motion.div>
           </div>

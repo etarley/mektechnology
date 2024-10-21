@@ -55,28 +55,28 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: FaGithub,
-      url: "https://github.com/MekTechnologies",
+      url: "https://github.com/MekTechnology",
       color: "#333",
     },
     {
       icon: FaLinkedin,
-      url: "https://www.linkedin.com/company/mektechnologies",
+      url: "https://www.linkedin.com/company/mektechnology",
       color: "#0077B5",
     },
     {
       icon: FaTwitter,
-      url: "https://twitter.com/MekTechnologies",
+      url: "https://twitter.com/MekTechnology",
       color: "#1DA1F2",
     },
     {
       icon: FaInstagram,
-      url: "https://www.instagram.com/mektechnologies",
+      url: "https://www.instagram.com/mektechnology",
       color: "#E1306C",
     },
   ];
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("contacto@mektechnologies.com");
+    navigator.clipboard.writeText("contact@mektechnology.com");
     setIsEmailCopied(true);
     setTimeout(() => setIsEmailCopied(false), 2000);
   };
@@ -153,7 +153,7 @@ const Footer = () => {
                 <AnimatedLogo className="w-12 h-12" />
               </motion.div>
               <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#c13236] to-[#ff6b6b]">
-                Mek Technologies
+                Mek Technology
               </h3>
             </motion.div>
             <motion.p
@@ -255,7 +255,7 @@ const Footer = () => {
                   onClick={handleCopyEmail}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  contacto@mektechnologies.com
+                  contact@mektechnology.com
                 </button>
                 <AnimatePresence>
                   {isEmailCopied && (
@@ -307,7 +307,7 @@ const Footer = () => {
         >
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()}{" "}
-            Mek Technologies. Todos los derechos reservados.
+            Mek Technology. Todos los derechos reservados.
           </p>
         </motion.div>
       </div>

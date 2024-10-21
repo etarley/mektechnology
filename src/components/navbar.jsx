@@ -79,7 +79,7 @@ const Navbar = () => {
               <AnimatedLogo className="size-10" />
             </motion.div>
             <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#c13236] to-[#ff6b6b] ml-0">
-              Mek Technologies
+              Mek Technology
             </h3>
           </motion.div>
           <div className="hidden md:block">

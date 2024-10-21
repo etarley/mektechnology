@@ -64,7 +64,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Mek Technologies
+              Mek Technology
             </motion.h1>
             <motion.p
               className="text-2xl mb-8 text-gray-300"
@@ -110,7 +110,7 @@ const Hero = () => {
 
       {/* Indicador de desplazamiento */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className=" hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.5 }}

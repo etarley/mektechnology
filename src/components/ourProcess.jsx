@@ -125,7 +125,7 @@ const NuestroProceso = () => {
           variants={itemVariants}
           className="text-xl md:text-2xl text-center mb-16 text-gray-300 max-w-4xl mx-auto leading-relaxed"
         >
-          En Mek Technologies, fusionamos visión creativa y excelencia técnica
+          En Mek Technology, fusionamos visión creativa y excelencia técnica
           para forjar el futuro de las aplicaciones móviles.
         </motion.p>
 
