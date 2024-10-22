@@ -22,17 +22,56 @@ const Contacto = () => {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState(null);
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    // Simulamos el envío del formulario
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    toast.success("¡Mensaje enviado con éxito!", {
+
+    const formData = new FormData();
+    formData.append("name", data.nombre);
+    formData.append("email", data.email);
+    formData.append("message", data.mensaje);
+
+    formData.append("access_key", import.meta.env.VITE_WEB3FORM_ACCESS_KEY);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const responseData = await response.json();
+
+    if (responseData.error) {
+      toast.error(responseData.error.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      setIsSubmitting(false);
+    }
+
+    if (responseData.status === "error") {
+      toast.error(responseData.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    toast.success(responseData.message, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -41,6 +80,8 @@ const Contacto = () => {
       draggable: true,
       progress: undefined,
     });
+    setIsSubmitting(false);
+    reset();
   };
 
   useEffect(() => {
@@ -152,6 +193,7 @@ const Contacto = () => {
                 <motion.input
                   type="text"
                   id="nombre"
+                  name="nombre"
                   {...register("nombre", { required: true })}
                   className={`w-full px-3 py-2 border rounded-lg focus:outline-none ${errors.nombre ? "border-red-500" : "border-gray-300"
                     } ${isDarkMode
@@ -173,6 +215,7 @@ const Contacto = () => {
                   Correo electrónico
                 </label>
                 <motion.input
+                  name="email"
                   type="email"
                   id="email"
                   {...register("email", {
@@ -199,6 +242,7 @@ const Contacto = () => {
                   Mensaje
                 </label>
                 <motion.textarea
+                  name="mensaje"
                   id="mensaje"
                   {...register("mensaje", { required: true })}
                   className={`w-full px-3 py-2 border rounded-lg focus:outline-none ${errors.mensaje ? "border-red-500" : "border-gray-300"

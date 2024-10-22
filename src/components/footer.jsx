@@ -210,9 +210,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 "Inicio",
-                "Sobre Nosotros",
-                "Servicios",
-                "Portafolio",
+                "Nosotros",
+                "Aplicaciones",
+                "Proceso",
                 "Contacto",
               ].map((item, index) => (
                 <motion.li

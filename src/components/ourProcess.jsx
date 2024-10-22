@@ -40,30 +40,70 @@ const NuestroProceso = () => {
       descripcion:
         "Transformamos ideas disruptivas en conceptos revolucionarios que redefinen la interacción digital.",
       icono: "💡",
+      detalles: [
+        "Análisis profundo del mercado y tendencias emergentes",
+        "Identificación de oportunidades de innovación",
+        "Desarrollo de conceptos disruptivos",
+        "Validación de ideas con usuarios potenciales",
+        "Definición de objetivos estratégicos",
+        "Evaluación de viabilidad técnica",
+      ],
     },
     {
       titulo: "Diseño Vanguardista",
       descripcion:
         "Creamos interfaces que no solo impresionan, sino que establecen nuevos estándares en experiencia de usuario.",
       icono: "🎨",
+      detalles: [
+        "Creación de wireframes y prototipos interactivos",
+        "Diseño de interfaces intuitivas y atractivas",
+        "Implementación de principios de UX/UI modernos",
+        "Optimización para diferentes dispositivos",
+        "Desarrollo de sistemas de diseño escalables",
+        "Pruebas de usabilidad iterativas",
+      ],
     },
     {
       titulo: "Desarrollo Pionero",
       descripcion:
         "Construimos aplicaciones robustas y escalables que desafían los límites de la tecnología móvil.",
       icono: "⚙️",
+      detalles: [
+        "Arquitectura de software modular y escalable",
+        "Implementación de tecnologías de vanguardia",
+        "Desarrollo de funcionalidades innovadoras",
+        "Integración de APIs y servicios avanzados",
+        "Optimización de rendimiento y seguridad",
+        "Pruebas automatizadas exhaustivas",
+      ],
     },
     {
       titulo: "Optimización Exhaustiva",
       descripcion:
         "Refinamos cada detalle para garantizar un rendimiento excepcional y una experiencia de usuario impecable.",
       icono: "🚀",
+      detalles: [
+        "Análisis de métricas de rendimiento",
+        "Optimización de tiempos de carga y respuesta",
+        "Depuración y refinamiento del código",
+        "Pruebas de estrés y escalabilidad",
+        "Optimización de recursos y almacenamiento",
+        "Mejora continua basada en feedback",
+      ],
     },
     {
       titulo: "Lanzamiento Estratégico",
       descripcion:
         "Desplegamos con precisión, monitoreando cada aspecto para asegurar un impacto revolucionario en el mercado.",
       icono: "🌟",
+      detalles: [
+        "Planificación detallada del lanzamiento",
+        "Implementación de estrategias de marketing digital",
+        "Monitoreo en tiempo real del desempeño",
+        "Soporte técnico especializado 24/7",
+        "Análisis de métricas post-lanzamiento",
+        "Iteración basada en feedback de usuarios",
+      ],
     },
   ];
 
