@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AnimatePresence,
   motion,
   useAnimation,
+  useScroll,
   useTransform,
-  useViewportScroll,
 } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Tilt } from "react-tilt";
@@ -18,7 +18,7 @@ const NuestroProceso = () => {
     triggerOnce: false,
   });
 
-  const { scrollYProgress } = useViewportScroll();
+  const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [
     0.2,
     1,

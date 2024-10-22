@@ -8,12 +8,9 @@ import {
 import {
   FaChevronUp,
   FaEnvelope,
-  FaGithub,
   FaInstagram,
-  FaLinkedin,
   FaMapMarkerAlt,
   FaPhoneAlt,
-  FaTwitter,
 } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import AnimatedLogo from "./animatedLogo";
@@ -21,13 +18,11 @@ import AnimatedLogo from "./animatedLogo";
 const Footer = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
   const [isEmailCopied, setIsEmailCopied] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const footerControls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: false,
   });
-  const [expandedSection, setExpandedSection] = useState(null);
   const cursorRef = useRef(null);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -42,7 +37,7 @@ const Footer = () => {
     return () => {
       window.removeEventListener("mousemove", moveCursor);
     };
-  }, []);
+  }, [cursorX, cursorY]);
 
   useEffect(() => {
     if (inView) {
@@ -54,21 +49,6 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      icon: FaGithub,
-      url: "https://github.com/MekTechnology",
-      color: "#333",
-    },
-    {
-      icon: FaLinkedin,
-      url: "https://www.linkedin.com/company/mektechnology",
-      color: "#0077B5",
-    },
-    {
-      icon: FaTwitter,
-      url: "https://twitter.com/MekTechnology",
-      color: "#1DA1F2",
-    },
-    {
       icon: FaInstagram,
       url: "https://www.instagram.com/mektechnology",
       color: "#E1306C",
@@ -79,10 +59,6 @@ const Footer = () => {
     navigator.clipboard.writeText("contact@mektechnology.com");
     setIsEmailCopied(true);
     setTimeout(() => setIsEmailCopied(false), 2000);
-  };
-
-  const handleMouseMove = (e) => {
-    setMousePosition({ x: e.clientX, y: e.clientY });
   };
 
   const scrollToTop = () => {
@@ -111,15 +87,6 @@ const Footer = () => {
     },
   };
 
-  const expandVariants = {
-    collapsed: { height: 0, opacity: 0 },
-    expanded: {
-      height: "auto",
-      opacity: 1,
-      transition: { duration: 0.3, ease: "easeOut" },
-    },
-  };
-
   return (
     <motion.footer
       ref={ref}
@@ -127,7 +94,6 @@ const Footer = () => {
       initial="hidden"
       animate={footerControls}
       variants={footerVariants}
-      onMouseMove={handleMouseMove}
     >
       <motion.div
         ref={cursorRef}
@@ -216,7 +182,7 @@ const Footer = () => {
                 "Contacto",
               ].map((item, index) => (
                 <motion.li
-                  key={item}
+                  key={index}
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", ...springConfig }}
                 >

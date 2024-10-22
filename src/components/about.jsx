@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Meteors } from "./ui/meteors";
-import { motion, useAnimation, useViewportScroll } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, useAnimation, useScroll } from "framer-motion";
 
 const SobreNosotros = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const controls = useAnimation();
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
 
   const features = [
     {
@@ -97,10 +96,10 @@ const SobreNosotros = () => {
           variants={itemVariants}
           className="text-lg sm:text-xl lg:text-2xl text-gray-700 mb-12 sm:mb-16 text-center max-w-4xl mx-auto leading-relaxed"
         >
-          En Mek Technology, no solo seguimos tendencias, las creamos.
-          Fusionamos creatividad visionaria con tecnología de punta para forjar
-          experiencias digitales que trascienden lo ordinario y definen el
-          futuro.
+          En Mek Technology no solo seguimos tendencias,{" "}
+          <b className="font-bold">las creamos</b>. Fusionamos creatividad
+          visionaria con tecnología de punta para forjar experiencias digitales
+          que trascienden lo ordinario y definen el futuro.
         </motion.p>
 
         <motion.div

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   AnimatePresence,
   motion,
@@ -28,13 +28,13 @@ const Navbar = () => {
     ["rgba(18, 18, 18, 0)", "rgba(18, 18, 18, 0.95)"],
   );
 
-  const navItems = [
+  const navItems = useMemo(() => [
     { id: "inicio", label: "Inicio", icon: FiHome },
     { id: "nosotros", label: "Nosotros", icon: FiUsers },
     { id: "aplicaciones", label: "Aplicaciones", icon: FiSmartphone },
     { id: "proceso", label: "Proceso", icon: FiCpu },
     { id: "contacto", label: "Contacto", icon: FiMail },
-  ];
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +53,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navItems]);
 
   const variants = {
     open: { opacity: 1, x: 0 },
@@ -151,7 +151,7 @@ const NavItem = ({ item, isActive }) => (
 const MobileNavItem = ({ item, isActive, onClick }) => (
   <motion.a
     href={`#${item.id}`}
-    className={`block px-4 py-3 rounded-lg text-lg font-medium flex items-center space-x-3 ${isActive
+    className={` px-4 py-3 rounded-lg text-lg font-medium flex items-center space-x-3 ${isActive
         ? "text-white bg-[#c13236] shadow-lg shadow-[#c13236]/50"
         : "text-gray-300 hover:text-white hover:bg-[#c13236] hover:bg-opacity-75"
       } transition-all duration-300`}

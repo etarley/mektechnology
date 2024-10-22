@@ -2,15 +2,8 @@ import { useEffect, useState } from "react";
 import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useForm } from "react-hook-form";
-import {
-  FaChevronDown,
-  FaCopy,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-  FaPhone,
-} from "react-icons/fa";
-import { toast, ToastContainer } from "react-toastify";
+import { FaChevronDown, FaCopy, FaEnvelope, FaPhone } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Contacto = () => {
   const [ref, inView] = useInView({
@@ -342,42 +335,7 @@ const Contacto = () => {
                   <FaCopy />
                 </motion.button>
               </motion.div>
-              <motion.div
-                className="flex items-center mb-4"
-                whileHover={{ x: 10 }}
-              >
-                <FaGithub
-                  className={`mr-4 text-2xl ${isDarkMode ? "text-[#ff4d4d]" : "text-[#c13236]"
-                    }`}
-                />
-                <a
-                  href="https://github.com/MekTechnology"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`hover:${isDarkMode ? "text-[#ff4d4d]" : "text-[#c13236]"
-                    } transition-colors`}
-                >
-                  github.com/MekTechnology
-                </a>
-              </motion.div>
-              <motion.div
-                className="flex items-center mb-4"
-                whileHover={{ x: 10 }}
-              >
-                <FaLinkedin
-                  className={`mr-4 text-2xl ${isDarkMode ? "text-[#ff4d4d]" : "text-[#c13236]"
-                    }`}
-                />
-                <a
-                  href="https://www.linkedin.com/company/mektechnology"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`hover:${isDarkMode ? "text-[#ff4d4d]" : "text-[#c13236]"
-                    } transition-colors`}
-                >
-                  linkedin.com/company/mektechnology
-                </a>
-              </motion.div>
+
               <motion.p
                 className={`mt-8 ${isDarkMode ? "text-gray-300" : "text-gray-600"
                   }`}

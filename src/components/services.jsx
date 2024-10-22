@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { NeonGradientCard } from "./ui/neon-gradient-card";
 import {
   AnimatePresence,
@@ -7,14 +7,9 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const AplicacionesMek = () => {
   const [appActiva, setAppActiva] = useState(null);
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
 
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
