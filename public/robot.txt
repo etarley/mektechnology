@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mektechnology.net/sitemap.xml
+
+// Add meta description to index.html
+<meta name="description" content="Mek Technology - Transformando ideas en experiencias digitales excepcionales. Desarrollo de aplicaciones móviles innovadoras y soluciones tecnológicas personalizadas." />
+
+// Update button components to include accessible names
+// Example in components/contacto.jsx
+<button
+  aria-label="Copiar correo electrónico"
+  onClick={() => copyToClipboard("contact@mektechnology.com")}
+  className="ml-2 text-gray-500 hover:text-gray-700"
+>
+  <FaCopy />
+</button>

@@ -1,12 +1,24 @@
-import Hero from "./components/hero";
-import About from "./components/about";
-import Servicios from "./components/services";
-import NuestroProceso from "./components/ourProcess";
-import Contacto from "./components/contacto";
-import Footer from "./components/footer";
-import Navbar from "./components/navbar";
+import { lazy } from "react";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./components/navbar";
+import Hero from "./components/hero";
+
+// Lazy load components
+const About = lazy(() =>
+  import("./components/about" /* webpackChunkName: "about" */)
+);
+const Servicios = lazy(() =>
+  import("./components/services" /* webpackChunkName: "services" */)
+);
+const NuestroProceso = lazy(() =>
+  import("./components/ourProcess" /* webpackChunkName: "process" */)
+);
+const Contacto = lazy(() =>
+  import("./components/contacto" /* webpackChunkName: "contact" */)
+);
+const Footer = lazy(() =>
+  import("./components/footer" /* webpackChunkName: "footer" */)
+);
 
 function App() {
   return (
@@ -14,6 +26,7 @@ function App() {
       <ToastContainer />
       <Navbar />
       <Hero />
+
       <About />
       <Servicios />
       <NuestroProceso />

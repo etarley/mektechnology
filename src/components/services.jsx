@@ -28,13 +28,37 @@ const AplicacionesMek = () => {
 
   const smoothY = useSpring(y, { stiffness: 100, damping: 30 });
 
+  const ImageWithBlur = ({ src, alt, width, height, className }) => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    return (
+      <div className={`relative ${className}`} style={{ width, height }}>
+        {isLoading && (
+          <div
+            className="absolute inset-0 bg-gray-200 animate-pulse"
+            style={{ aspectRatio: width / height }}
+          />
+        )}
+        <img
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className={`${className} ${isLoading ? "opacity-0" : "opacity-100"
+            } transition-opacity duration-300`}
+          onLoad={() => setIsLoading(false)}
+        />
+      </div>
+    );
+  };
+
   const aplicaciones = [
     {
       nombre: "Ineedem",
       estado: "Disponible",
       descripcion:
         "La plataforma que te conecta con proveedores de servicios capaces de ayudarte con tus necesidades.",
-      icono: <img src="/ineedem.png" className="h-8" />,
+      icono: <ImageWithBlur width={144} height={32} src="/ineedem.png" />,
       caracteristicas: [
         "Conexión rápida entre clientes y proveedores",
         "Plataforma colaborativa y segura",
@@ -50,7 +74,14 @@ const AplicacionesMek = () => {
       estado: "En desarrollo",
       descripcion:
         "Conecta camioneros con personas interesadas en trasladar distintos tipos de cargas.",
-      icono: <img src="/telocargamos.png" className="h-8" />,
+      icono: (
+        <ImageWithBlur
+          width={72}
+          height={32}
+          src="/telocargamos.png"
+          className="h-8"
+        />
+      ),
       caracteristicas: [
         "Conexión eficiente entre transportistas y clientes",
         "Gestión de diversos tipos de carga",
@@ -155,7 +186,7 @@ const AplicacionesMek = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <span className="text-5xl mr-4">{app.icono}</span>
+                  <span className="text-3xl mr-4">{app.icono}</span>
                   {app.nombre === "Dr. Fácil" &&
                     (
                       <h3 className="text-2xl font-bold text-white">
